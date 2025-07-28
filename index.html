@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essence of Love - Premium Chocolate Fruit Bars</title>
+    <meta name="description" content="Rare as it is, love is always familiar. Discover our premium chocolate fruit bars crafted with love and warmth.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="chocolate-drip"></div>
+            <p class="loading-text">Crafting your experience...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Essence of Love</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#products" class="nav-link">Collection</a></li>
+                <li><a href="#customize" class="nav-link">Build Your Bar</a></li>
+                <li><a href="#gifts" class="nav-link">Gifts</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="auth-btn" id="loginBtn">Sign In</button>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section id="welcome" class="welcome-section">
+        <div class="welcome-overlay"></div>
+        <div class="welcome-content">
+            <h1 class="welcome-title fade-in">Rare as it is, love is always familiar...</h1>
+            <p class="welcome-subtitle fade-in-delay">Discover the essence of love in every carefully crafted chocolate fruit bar</p>
+            <button class="cta-button enter-btn" id="enterBtn">Enter the World</button>
+        </div>
+        <div class="welcome-background">
+            <div class="floating-particles"></div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content hidden">
+        
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">What We Craft</h1>
+                    <p class="hero-description">Each bar tells a story of love, comfort, and nostalgia, handcrafted with the finest ingredients and deepest care.</p>
+                    <button class="cta-button hero-cta" onclick="scrollToSection('products')">Explore Collection</button>
+                </div>
+                <div class="hero-visual">
+                    <div class="chocolate-showcase">
+                        <div class="chocolate-bar floating"></div>
+                        <div class="fruit-elements">
+                            <div class="fruit strawberry"></div>
+                            <div class="fruit blueberry"></div>
+                            <div class="fruit orange"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Timeline -->
+        <section class="story-section">
+            <div class="container">
+                <div class="timeline">
+                    <div class="timeline-item" data-story="origin">
+                        <div class="timeline-content">
+                            <h3>Origin of Ingredients</h3>
+                            <p>Ethically sourced cocoa from sustainable farms, paired with the finest natural fruits</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-story="emotion">
+                        <div class="timeline-content">
+                            <h3>Emotional Intent</h3>
+                            <p>Every bar crafted with love, comfort, and nostalgia - emotions you can taste</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-story="craft">
+                        <div class="timeline-content">
+                            <h3>The Craft</h3>
+                            <p>Hand-poured with precision, each bar is a work of art that speaks to the soul</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products-section">
+            <div class="container">
+                <h2 class="section-title">The Collection</h2>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be dynamically loaded -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Customize Section -->
+        <section id="customize" class="customize-section">
+            <div class="container">
+                <h2 class="section-title">Build Your Emotions</h2>
+                <div class="customize-container">
+                    <div class="customize-steps">
+                        <div class="step active" data-step="base">
+                            <h3>Choose Your Base</h3>
+                            <div class="options">
+                                <div class="option" data-value="dark">
+                                    <div class="option-visual dark-chocolate"></div>
+                                    <span>Dark</span>
+                                </div>
+                                <div class="option" data-value="milk">
+                                    <div class="option-visual milk-chocolate"></div>
+                                    <span>Milk</span>
+                                </div>
+                                <div class="option" data-value="white">
+                                    <div class="option-visual white-chocolate"></div>
+                                    <span>White</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step" data-step="fruit">
+                            <h3>Select Your Fruit</h3>
+                            <div class="options">
+                                <div class="option" data-value="berry">
+                                    <div class="option-visual berry-mix"></div>
+                                    <span>Berry Blend</span>
+                                </div>
+                                <div class="option" data-value="citrus">
+                                    <div class="option-visual citrus-mix"></div>
+                                    <span>Citrus Burst</span>
+                                </div>
+                                <div class="option" data-value="exotic">
+                                    <div class="option-visual exotic-mix"></div>
+                                    <span>Exotic Dreams</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step" data-step="emotion">
+                            <h3>Add Your Emotion</h3>
+                            <div class="options">
+                                <div class="option" data-value="calm">
+                                    <div class="option-visual calm-essence"></div>
+                                    <span>Calm</span>
+                                </div>
+                                <div class="option" data-value="bold">
+                                    <div class="option-visual bold-essence"></div>
+                                    <span>Bold</span>
+                                </div>
+                                <div class="option" data-value="nostalgic">
+                                    <div class="option-visual nostalgic-essence"></div>
+                                    <span>Nostalgic</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="customize-preview">
+                        <div class="preview-container">
+                            <div class="animated-bar" id="customBar">
+                                <div class="bar-base"></div>
+                                <div class="bar-fruit"></div>
+                                <div class="bar-emotion"></div>
+                            </div>
+                            <div class="preview-details">
+                                <h4 id="barName">Your Custom Creation</h4>
+                                <p id="barDescription">Select your preferences to see your unique bar</p>
+                                <div class="price" id="barPrice">$12.99</div>
+                                <button class="add-to-cart-btn" id="addCustomBar">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gifts Section -->
+        <section id="gifts" class="gifts-section">
+            <div class="container">
+                <h2 class="section-title">Gifts & Moments</h2>
+                <div class="gifts-grid">
+                    <div class="gift-card seasonal">
+                        <div class="gift-image"></div>
+                        <h3>Seasonal Collection</h3>
+                        <p>Limited edition bars inspired by the seasons</p>
+                        <button class="gift-btn">Explore</button>
+                    </div>
+                    <div class="gift-card love-box">
+                        <div class="gift-image"></div>
+                        <h3>Love Box</h3>
+                        <p>Curated collection for special moments</p>
+                        <button class="gift-btn">Create Box</button>
+                    </div>
+                    <div class="gift-card care-package">
+                        <div class="gift-image"></div>
+                        <h3>Care Package</h3>
+                        <p>Send comfort and warmth to someone special</p>
+                        <button class="gift-btn">Send Care</button>
+                    </div>
+                </div>
+                
+                <div class="promo-section">
+                    <h3>Special Offers</h3>
+                    <div class="promo-code">
+                        <input type="text" placeholder="Enter promo code" id="promoInput">
+                        <button id="applyPromo">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Whispers to Us</h2>
+                <div class="contact-container">
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="contactName" required>
+                                <label for="contactName">Your Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="contactEmail" required>
+                                <label for="contactEmail">Your Email</label>
+                            </div>
+                            <div class="form-group">
+                                <select id="messageType" required>
+                                    <option value="">Choose your tone</option>
+                                    <option value="inquiry">Inquiry</option>
+                                    <option value="memory">Memory to Share</option>
+                                    <option value="gift-issue">Gift Issue</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="contactMessage" required></textarea>
+                                <label for="contactMessage">Your Message</label>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Your Note</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Connect With Us</h3>
+                        <p>Share your stories, memories, or simply say hello. Every message matters to us.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>hello@essenceoflove.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+1 (555) 123-LOVE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Essence of Love</h4>
+                    <p>Crafting moments of sweetness and mystery, one bar at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#products">Collection</a></li>
+                        <li><a href="#customize">Build Your Bar</a></li>
+                        <li><a href="#gifts">Gifts</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Our Journey</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Stay Connected</h4>
+                    <p>Get stories of sweetness and mystery, monthly.</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Essence of Love. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="product-image-container">
+                    <img id="modalProductImage" src="" alt="">
+                </div>
+                <div class="product-details">
+                    <h3 id="modalProductName"></h3>
+                    <p id="modalProductDescription"></p>
+                    <div class="product-info">
+                        <div class="price" id="modalProductPrice"></div>
+                        <div class="quantity-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="quantity">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-btn modal-add-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal">
+            <div class="modal-header">
+                <h3>Your Cart</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically added -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: $<span id="cartTotal">0.00</span></span>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content auth-modal">
+            <span class="close">&times;</span>
+            <div class="auth-container">
+                <div class="auth-form login-form active">
+                    <h3>Welcome Back</h3>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <input type="email" id="loginEmail" required>
+                            <label for="loginEmail">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="loginPassword" required>
+                            <label for="loginPassword">Password</label>
+                        </div>
+                        <button type="submit">Sign In</button>
+                    </form>
+                    <p>Don't have an account? <a href="#" class="auth-switch" data-form="signup">Sign up</a></p>
+                </div>
+                
+                <div class="auth-form signup-form">
+                    <h3>Join Our Family</h3>
+                    <form id="signupForm">
+                        <div class="form-group">
+                            <input type="text" id="signupName" required>
+                            <label for="signupName">Full Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="signupEmail" required>
+                            <label for="signupEmail">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="signupPassword" required>
+                            <label for="signupPassword">Password</label>
+                        </div>
+                        <button type="submit">Create Account</button>
+                    </form>
+                    <p>Already have an account? <a href="#" class="auth-switch" data-form="login">Sign in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/products.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/animations.js"></script>
+</body>
+</html>
