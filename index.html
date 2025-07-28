@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleur - The Essence of Love in Every Bar</title>
+    <meta name="description" content="Rare as it is, love is always familiar. Discover our premium chocolate fruit bars crafted with love and mystery.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <!-- Welcome Landing Page -->
+    <div id="welcome-page" class="welcome-page active">
+        <div class="welcome-overlay"></div>
+        <div class="welcome-content">
+            <div class="poetry-section">
+                <h1 class="poetry-text fade-in-delay-1">Rare as it is,</h1>
+                <h1 class="poetry-text fade-in-delay-2">love is always familiar...</h1>
+                <p class="poetry-subtitle fade-in-delay-3">Where every bite tells a story of passion and sweetness</p>
+            </div>
+            <div class="welcome-actions fade-in-delay-4">
+                <button class="enter-btn" onclick="enterSite()">Enter the World</button>
+                <div class="auth-options">
+                    <button class="auth-btn" onclick="showAuth('login')">Sign In</button>
+                    <button class="auth-btn" onclick="showAuth('register')">Create Account</button>
+                </div>
+            </div>
+        </div>
+        <div class="ambient-particles"></div>
+    </div>
+
+    <!-- Main Website -->
+    <div id="main-site" class="main-site">
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h2>Fleur</h2>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#products" class="nav-link">Collection</a></li>
+                    <li><a href="#build" class="nav-link">Build Your Bar</a></li>
+                    <li><a href="#gifts" class="nav-link">Gifts & Moments</a></li>
+                    <li><a href="#contact" class="nav-link">Whispers to Us</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="cart-icon" onclick="toggleCart()">
+                        <span class="cart-symbol">🛒</span>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </div>
+                    <div class="user-menu">
+                        <span class="user-icon" onclick="toggleUserMenu()">👤</span>
+                        <div class="user-dropdown" id="user-dropdown">
+                            <a href="#" onclick="showAuth('login')">Sign In</a>
+                            <a href="#" onclick="showAuth('register')">Register</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-background">
+                <div class="parallax-layer layer-1"></div>
+                <div class="parallax-layer layer-2"></div>
+                <div class="parallax-layer layer-3"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">What We Craft</h1>
+                <p class="hero-subtitle">Each bar is a journey through layers of love, mystery, and the finest ingredients nature has to offer</p>
+                <button class="cta-button" onclick="scrollToSection('products')">Discover Our Story</button>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- Story Timeline Section -->
+        <section class="story-section">
+            <div class="container">
+                <h2 class="section-title">The Journey of Love</h2>
+                <div class="timeline">
+                    <div class="timeline-item reveal-on-scroll">
+                        <div class="timeline-content">
+                            <h3>Origin of Ingredients</h3>
+                            <p>We source the finest ethically grown cocoa beans from Ecuador's cloud forests and select the most vibrant fruits at their peak ripeness.</p>
+                        </div>
+                        <div class="timeline-visual">
+                            <div class="ingredient-animation cocoa"></div>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal-on-scroll">
+                        <div class="timeline-content">
+                            <h3>Emotional Intent</h3>
+                            <p>Every bar carries an emotion - Love for connection, Comfort for solace, Nostalgia for memories that warm the heart.</p>
+                        </div>
+                        <div class="timeline-visual">
+                            <div class="ingredient-animation emotion"></div>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal-on-scroll">
+                        <div class="timeline-content">
+                            <h3>Crafted by Hand</h3>
+                            <p>Our chocolatiers pour their passion into every bar, tempering chocolate with patience and infusing fruit with care.</p>
+                        </div>
+                        <div class="timeline-visual">
+                            <div class="ingredient-animation crafting"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products-section">
+            <div class="container">
+                <h2 class="section-title">The Collection</h2>
+                <div class="products-grid" id="products-grid">
+                    <!-- Products will be dynamically loaded -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Build Your Bar Section -->
+        <section id="build" class="build-section">
+            <div class="container">
+                <h2 class="section-title">Build Your Bar</h2>
+                <p class="section-subtitle">Customize Your Emotions</p>
+                <div class="bar-builder" id="bar-builder">
+                    <div class="builder-steps">
+                        <div class="step active" data-step="1">
+                            <h3>Choose Your Base</h3>
+                            <div class="options-grid">
+                                <div class="option" data-type="base" data-value="dark">
+                                    <div class="option-visual dark-chocolate"></div>
+                                    <span>Dark Chocolate</span>
+                                    <p>Bold & Mysterious</p>
+                                </div>
+                                <div class="option" data-type="base" data-value="milk">
+                                    <div class="option-visual milk-chocolate"></div>
+                                    <span>Milk Chocolate</span>
+                                    <p>Comforting & Warm</p>
+                                </div>
+                                <div class="option" data-type="base" data-value="white">
+                                    <div class="option-visual white-chocolate"></div>
+                                    <span>White Chocolate</span>
+                                    <p>Pure & Delicate</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step" data-step="2">
+                            <h3>Select Your Fruit</h3>
+                            <div class="options-grid">
+                                <div class="option" data-type="fruit" data-value="berry">
+                                    <div class="option-visual berry"></div>
+                                    <span>Mixed Berries</span>
+                                    <p>Sweet & Tart</p>
+                                </div>
+                                <div class="option" data-type="fruit" data-value="citrus">
+                                    <div class="option-visual citrus"></div>
+                                    <span>Citrus Blend</span>
+                                    <p>Bright & Zesty</p>
+                                </div>
+                                <div class="option" data-type="fruit" data-value="exotic">
+                                    <div class="option-visual exotic"></div>
+                                    <span>Exotic Fruits</span>
+                                    <p>Unique & Adventurous</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step" data-step="3">
+                            <h3>Add Your Emotion</h3>
+                            <div class="options-grid">
+                                <div class="option" data-type="emotion" data-value="calm">
+                                    <div class="option-visual calm"></div>
+                                    <span>Calm</span>
+                                    <p>Lavender & Vanilla</p>
+                                </div>
+                                <div class="option" data-type="emotion" data-value="bold">
+                                    <div class="option-visual bold"></div>
+                                    <span>Bold</span>
+                                    <p>Chili & Ginger</p>
+                                </div>
+                                <div class="option" data-type="emotion" data-value="nostalgic">
+                                    <div class="option-visual nostalgic"></div>
+                                    <span>Nostalgic</span>
+                                    <p>Cinnamon & Honey</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bar-preview">
+                        <div class="preview-container">
+                            <div class="chocolate-bar" id="chocolate-preview">
+                                <div class="base-layer"></div>
+                                <div class="fruit-layer"></div>
+                                <div class="emotion-layer"></div>
+                            </div>
+                        </div>
+                        <div class="preview-details">
+                            <h4 id="preview-name">Your Custom Bar</h4>
+                            <p id="preview-description">Select options to see your creation</p>
+                            <div class="price" id="preview-price">$24.99</div>
+                            <button class="add-to-cart-btn" id="add-custom-bar" disabled>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="builder-navigation">
+                    <button class="nav-btn prev" onclick="previousStep()" disabled>Previous</button>
+                    <button class="nav-btn next" onclick="nextStep()">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gifts & Moments Section -->
+        <section id="gifts" class="gifts-section">
+            <div class="container">
+                <h2 class="section-title">Gifts & Moments</h2>
+                <div class="gifts-grid">
+                    <div class="gift-card featured">
+                        <div class="gift-image seasonal"></div>
+                        <div class="gift-content">
+                            <h3>Limited Edition</h3>
+                            <p>Winter Solstice Collection - Available for a limited time</p>
+                            <div class="price">$39.99</div>
+                            <button class="gift-btn">Shop Limited</button>
+                        </div>
+                    </div>
+                    <div class="gift-card">
+                        <div class="gift-image gift-box"></div>
+                        <div class="gift-content">
+                            <h3>Gift Boxes</h3>
+                            <p>Curated collections perfect for sharing moments of love</p>
+                            <div class="price">From $29.99</div>
+                            <button class="gift-btn">Browse Gifts</button>
+                        </div>
+                    </div>
+                    <div class="gift-card">
+                        <div class="gift-image promo"></div>
+                        <div class="gift-content">
+                            <h3>Love Letters</h3>
+                            <p>Send personalized care packages with custom notes</p>
+                            <div class="price">$19.99</div>
+                            <button class="gift-btn">Send Love</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="promo-section">
+                    <h3>Special Offers</h3>
+                    <div class="promo-code">
+                        <input type="text" placeholder="Enter promo code" id="promo-input">
+                        <button onclick="applyPromo()">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Whispers to Us</h2>
+                <div class="contact-content">
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">Your Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Your Email</label>
+                            </div>
+                            <div class="form-group">
+                                <select id="tone" name="tone">
+                                    <option value="inquiry">Inquiry</option>
+                                    <option value="memory">Memory to Share</option>
+                                    <option value="gift-issue">Gift Issue</option>
+                                </select>
+                                <label for="tone">Message Tone</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Your Whisper</button>
+                        </form>
+                    </div>
+                    <div class="contact-visual">
+                        <div class="floating-elements">
+                            <div class="element chocolate"></div>
+                            <div class="element fruit"></div>
+                            <div class="element heart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <h3>Fleur</h3>
+                        <p>The essence of love in every bar</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="link-group">
+                            <h4>Connect</h4>
+                            <a href="#">Instagram</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">Facebook</a>
+                        </div>
+                        <div class="link-group">
+                            <h4>Support</h4>
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">FAQ</a>
+                        </div>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Get stories of sweetness and mystery, monthly</h4>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Your email">
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Fleur. All rights reserved. Made with love and mystery.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Shopping Cart Panel -->
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <div class="empty-cart">
+                <p>Your cart is empty</p>
+                <p>Add some love to your collection</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total: $<span id="cart-total">0.00</span></span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Complete Order</button>
+        </div>
+    </div>
+
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-content">
+            <button class="close-auth" onclick="closeAuth()">×</button>
+            <div class="auth-forms">
+                <div class="auth-form login-form active" id="login-form">
+                    <h2>Welcome Back</h2>
+                    <form onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <input type="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" required>
+                            <label>Password</label>
+                        </div>
+                        <button type="submit">Sign In</button>
+                    </form>
+                    <p>Don't have an account? <a href="#" onclick="switchAuth('register')">Create one</a></p>
+                </div>
+                <div class="auth-form register-form" id="register-form">
+                    <h2>Join Our World</h2>
+                    <form onsubmit="handleRegister(event)">
+                        <div class="form-group">
+                            <input type="text" required>
+                            <label>Full Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" required>
+                            <label>Password</label>
+                        </div>
+                        <button type="submit">Create Account</button>
+                    </form>
+                    <p>Already have an account? <a href="#" onclick="switchAuth('login')">Sign in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="product-modal" id="product-modal">
+        <div class="product-modal-content">
+            <button class="close-modal" onclick="closeProductModal()">×</button>
+            <div class="product-detail" id="product-detail">
+                <!-- Product details will be dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
